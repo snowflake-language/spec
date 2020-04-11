@@ -70,6 +70,27 @@ other literals or identifiers
     0b00000000
     ~~~
 
+#### base-8 {#lexical-structure-literals-base-eight}
+
+Base-8 literals are literals representing a base-8 (octal) integer. They are
+composed of characters representing integers within the range 0-7 (inclusive).
+They are prefixed with `0o` so that the compiler can differentiate them from
+other literals or identifiers
+
+##### examples {#base-eight-examples}
+
+1. The integer `2` in base-8
+
+    ~~~ {#base-eight-example-1 .snowflake}
+    0o3
+    ~~~
+
+2. The integer `49` in base-8
+
+    ~~~ {#base-eight-example-2 .snowflake}
+    0o61
+    ~~~
+
 #### base-10 {#lexical-structure-literals-base-ten}
 
 Base-10 literals are literals representing a base-10 integer. They are composed
@@ -164,7 +185,7 @@ Character literals are literals representing a single character. UTF-8 is
 supported. If there are no Unicode characters within a character literal, it is
 represented internally as plain ASCII, rather than UTF-8.
 
-They are written as a single character prefixed with a `'` quote character
+They are written as a single character between two `'` quote characters
 
 ##### forcing interpretation {#lexical-structure-literals-character-forcing-interpretation}
 
@@ -183,6 +204,27 @@ rules](#lexical-structure-literals-forcing-interpretation)
 
     ~~~ {#character-example-2 .snowflake}
     '▲'
+    ~~~
+
+#### symbol {#lexical-structure-literals-symbol}
+
+Symbol literals are literals representing an immutable, case-insensitive value
+that always means the same thing in any context. They are composed of characters
+in the range 0-9 a-z (inclusive). They are prefixed by a `:` so that they can be
+distinguished from other literals or identifiers.
+
+##### examples {#symbol-examples}
+
+1. The symbol `snowflake`
+
+    ~~~ {#symbol-example-1 .snowflake}
+    :snowflake ** also equal to :SNOWFLAKE, :Snowflake, etc...
+    ~~~
+
+2. The symbol `appl3s4uc3`
+
+    ~~~ {#symbol-example-2 .snowflake}
+    :appl3s4uc3 ** also equal to :APPL3S4UC3, :Appl3s4uc3, etc...
     ~~~
 
 # types {#types}
